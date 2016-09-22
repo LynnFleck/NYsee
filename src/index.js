@@ -1,1 +1,5 @@
-console.log('index.js is here')
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import Routes from './config/Routes.jsx';
+
+ReactDOM.render(< Routes />, document.getElementById('main'));

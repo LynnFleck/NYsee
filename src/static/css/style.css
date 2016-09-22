@@ -1,0 +1,54 @@
+body {
+/*   background:  lightslategray; */
+  box-sizing: border-box;
+}
+#container {
+  /* border:  10px solid blue; */
+}
+.clearfix:after {
+ visibility: hidden;
+ display: block;
+ font-size: 0;
+ content: " ";
+ clear: both;
+ height: 0;
+}
+header {
+  background-color:  lightslategray;
+  padding: 10px 10px 15px 20px;
+}
+header h1 {
+  margin: 0;
+  text-indent: -9999px;
+  background-image: url(./../images/NYSee-logo.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 75px;
+  width: 80%;
+  float: left;
+}
+#login-links-group {
+  float: right;
+  width: 20%;
+}
+.login-links {
+  float: right;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+#new-idea-box {
+  box-sizing: border-box;
+  width:  50%;
+  float:  left;
+  padding: 20px;
+  background-color: peachpuff;
+}
+#idea-list {
+  box-sizing: border-box;
+  width:  50%;
+  float:  right;
+  padding: 20px;
+  background-color:  yellowgreen;
+
+}
