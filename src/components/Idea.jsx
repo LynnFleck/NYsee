@@ -32,3 +32,4 @@ class Idea extends Component {
 }
 
 export default Idea;
+

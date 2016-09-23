@@ -23,7 +23,7 @@ class App extends Component {
     firebase.auth()
       .signOut()
       .then(() => {
-        console.log('user signed out');
+        console.log('user has been signed out');
       });
   }
   loggedInLinks() {

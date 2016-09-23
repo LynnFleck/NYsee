@@ -30,10 +30,10 @@ class Register extends Component {
       .then((user) => {
         firebase.database().ref('users')
           .child(user.uid)
-          .set({first_name: '', last_name: '', email: email, screenName: screenName})
+          .set({email: email, screenName: screenName})
       })
       .then(() => {
-        console.log(`{this.state.email} has registered`)
+        console.log(`email has registered`)
       })
       .then(() => {
         this.props.router.push('/dashboard');
