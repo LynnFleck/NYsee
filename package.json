@@ -1,22 +1,14 @@
 {
-  "name": "nysee",
+  "name": "nycsee",
   "version": "1.0.0",
-  "description": "list app for things to do in nyc",
-  "main": "index.js",
+  "description": "",
+  "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --hot --progress --colors"
+    "dev": "webpack-dev-server --inline --hot --progress --colors"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LynnFleck/NYsee.git"
-  },
-  "author": "lynn fleck",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/LynnFleck/NYsee/issues"
-  },
-  "homepage": "https://github.com/LynnFleck/NYsee#readme",
   "dependencies": {
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
@@ -25,9 +17,8 @@
     "firebase": "^3.4.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-router": "^2.8.1",
     "superagent": "^2.3.0",
-    "webpack": "^2.1.0-beta.25",
+    "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.1"
   },
   "devDependencies": {
@@ -35,6 +26,8 @@
     "eslint-config-airbnb": "^11.1.0",
     "eslint-plugin-import": "^1.15.0",
     "eslint-plugin-jsx-a11y": "^2.2.2",
-    "eslint-plugin-react": "^6.3.0"
+    "eslint-plugin-react": "^6.3.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
   }
 }

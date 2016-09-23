@@ -1,8 +1,8 @@
 const path = require('path');
 
 module.exports = {
-  devtool: 'source-map',  /// makes the errors readable back to the original files
-  entry: path.join(__dirname, 'src', 'index.js'), //where the entry point is
+  devtool: 'source-map',
+  entry: path.join(__dirname, 'src', 'index.js'),
   devServer: {
     contentBase: path.join(__dirname, 'src', 'static'),
     inline: true,
@@ -10,18 +10,18 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'src', 'static', 'js'),
-    filename: 'bundle.js',  // this is the compiled file
+    filename: 'bundle.js',
   },
   module: {
     loaders: [
       {
         test: /.jsx?$/,
         loader: 'babel-loader',
-        exclude: /node-modules/,
+        exclude: /node_modules/,
         query: {
           presets: ['es2015', 'react'],
         },
       },
     ],
   },
-}
+};

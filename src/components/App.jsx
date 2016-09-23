@@ -1,20 +1,55 @@
 import React, { Component } from 'react';
+import firebase from '../../firebase.config.js';
 import { Link } from 'react-router';
 
-
 class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
+    this.state = {
+      loggedIn: false,
+    };
+    this.signOut = this.signOut.bind(this);
   }
+  componentWillMount() {
+    setTimeout(() => {
+      firebase.auth().onAuthStateChanged((user) => {
+        this.setState({
+          loggedIn: (user !== null),
+        });
+      });
+    }, 200);
+  }
+  signOut() {
+    firebase.auth()
+      .signOut()
+      .then(() => {
+        console.log('user signed out');
+      });
+  }
+  loggedInLinks() {
+    if (this.state.loggedIn !== true) {
+      return (
+        <div>
+          <Link className="login-links" to="login">Login</Link>
+          <Link className="login-links" to="register">Register</Link>
+        </div>
+        );
+    } return (
+      <div>
+        <Link className="login-links" onClick={this.signOut}>Logout</Link>
+      </div>
+    );
+  }
+
   render() {
     return (
-      <div id="container">
+      <div >
         <header className="clearfix">
           <h1>Lynn's NYC and do</h1>
           <div id="login-links-group">
-            <Link className="login-links">Login</Link>
-            <Link className="login-links">Register</Link>
-            <Link className="login-links">Logout</Link>
+            {
+              this.loggedInLinks()
+            }
           </div>
           <div id="nav-links-group">
             <Link className="nav-links" to="/">Home</Link>
