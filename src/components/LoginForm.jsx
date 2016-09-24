@@ -8,6 +8,7 @@ class LoginForm extends Component {
     this.state = {
       email: '',
       password: '',
+      loggedIn: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,8 +35,7 @@ class LoginForm extends Component {
           .set({ email: email });
       })
       .then(() => {
-        const userId = firebase.auth().currentUser.uid;
-        this.props.router.push(`/${userId}`);
+        this.props.router.push('/dashboard');
       });
   }
   render() {
