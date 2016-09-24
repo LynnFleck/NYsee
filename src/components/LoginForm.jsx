@@ -18,8 +18,9 @@ class LoginForm extends Component {
     stateObj[stateKey] = e.target.value;
     this.setState(stateObj);
   }
-  handleSubmit() {
-    const { email, password } = this.state;
+  handleSubmit(e) {
+    e.preventDefault();
+    const { email, password, uid } = this.state;
     firebase.auth()
       .signInWithEmailAndPassword(email, password)
       .catch((err) => {
@@ -27,10 +28,15 @@ class LoginForm extends Component {
         const errorMessage = err.message;
         console.log(err);
       })
-      .then(() => {
-        this.props.router.push('/dashboard');
-        console.log('user has signed in')
+      .then((user) => {
+        firebase.database().ref('users')
+          .child(user.uid)
+          .set({ email: email });
       })
+      .then(() => {
+        const userId = firebase.auth().currentUser.uid;
+        this.props.router.push(`/${userId}`);
+      });
   }
   render() {
     return (

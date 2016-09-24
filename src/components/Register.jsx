@@ -25,15 +25,14 @@ class Register extends Component {
     firebase.auth()
       .createUserWithEmailAndPassword(email, password)
       .catch((err) => {
+        const errorCode = err.code;
+        const errorMessage = err.message;
         console.log(err);
       })
       .then((user) => {
         firebase.database().ref('users')
           .child(user.uid)
           .set({email: email, screenName: screenName})
-      })
-      .then(() => {
-        console.log(`email has registered`)
       })
       .then(() => {
         this.props.router.push('/dashboard');

@@ -55,6 +55,7 @@ class App extends Component {
             <Link className="nav-links" to="/">Home</Link>
             <Link className="nav-links" to="login">Login</Link>
             <Link className="nav-links" to="dashboard">Dashboard</Link>
+            <Link className="nav-links" onClick={this.signOut}>Logout</Link>
           </div>
         </header>
         <div id="content">
