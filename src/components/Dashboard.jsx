@@ -10,13 +10,13 @@ class Dashboard extends Component {
         <h1>This is the DASHBOARD page. This page IS protected</h1>
         <NewIdea
           id="123"
-          mainIdea="This is the idea right here"
+          mainIdea="nothing here"
           website="http://www.lynnfleck.com"
           screenName="trying to get screenName from the database"
         />
         <IdeaList
           id="123"
-          mainIdea="This is the idea right here"
+          mainIdea="nothing here"
           website="http://www.lynnfleck.com"
           screenName="Lynn F"
         />

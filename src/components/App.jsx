@@ -6,22 +6,11 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      useremail: '',
+      userEmail: '',
       loggedIn: false,
     };
     this.signOut = this.signOut.bind(this);
-    this.getUserInfo = this.getUserInfo.bind(this);
-  }
-  getUserInfo() {
-    const user = firebase.auth().currentUser;
-      if (user) {
-        this.setState({
-          useremail: user.email,
-        })
-        console.log(`${user.email} is logged in`);
-      } else {
-        console.log('No user is logged in');
-      };
+    // this.getScreenName = this.getScreenName.bind(this);
   }
   componentWillMount() {
     setTimeout(() => {
@@ -29,10 +18,22 @@ class App extends Component {
         this.setState({
           loggedIn: (user !== null),
         })
-        this.getUserInfo();
+        console.log(`Currently logged in ----- ${user.email} -----`)
+        this.setState({
+          userEmail: user.email,
+        })
       });
     }, 200)
+    // this.getScreenName();
   }
+  //can't get this to work
+  // getScreenName() {
+  //   const loggedInUser = firebase.auth().currentUser;
+  //   firebase.database().ref('users').orderByChild('email').equalTo(`${loggedInUser.email}`).on('child_added', function(snapshot) {
+  //     const sN = snapshot.val();
+  //     console.log(`The ScreenName is: ${sN.screenName}`);
+  //   });
+  // }
   signOut() {
     firebase.auth()
       .signOut()
@@ -52,7 +53,7 @@ class App extends Component {
       return (
       <div>
         <Link className="login-links" onClick={this.signOut}>Logout</Link>
-        <h3>Welcome {this.state.useremail}</h3>
+        <h4>Welcome {this.state.userEmail}</h4>
       </div>
       );
     };

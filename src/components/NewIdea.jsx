@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import firebase from '../../firebase.config.js';
 
-const propTypes = {
-  mainIdea: React.Component.string,
-  website: React.Component.string,
-}
+
 
 class NewIdea extends Component {
   constructor() {
@@ -12,6 +9,7 @@ class NewIdea extends Component {
     this.state = {
       mainIdea: '',
       website: '',
+      extraInfo: '',
     };
     this.handleChange = this.handleChange.bind(this);
     this.submitNewIdea = this.submitNewIdea.bind(this);
@@ -23,39 +21,43 @@ class NewIdea extends Component {
     stateObj[stateKey] = e.target.value;
     this.setState(stateObj);
   }
-  findScreenName() {
-
-  }
-  submitNewIdea( mainIdea, website ) {
+  submitNewIdea( mainIdea, website, extraInfo ) {
     const loggedInUser = firebase.auth().currentUser;
     const newPostKey = firebase.database().ref().child('ideas').push().key;
     firebase.database().ref(`ideas/${newPostKey}`).set({
       mainIdea: this.state.mainIdea,
       website: this.state.website,
+      extraInfo: this.state.extraInfo,
       uid: loggedInUser.uid,
       email: loggedInUser.email,
     })
     .then(() => {
         console.log('form has been submitted')
     })
-    // Get a key for a new Post.
   }
   render() {
     return (
       <div id="new-idea-box" className="clearfix">
         <h1>This is the NEW IDEA form</h1>
-        <div>{this.props.id}</div>
+        <div className={this.props.id}></div>
         <input
           name="mainIdea"
           type="textarea"
           onChange={this.handleChange}
-          placeholder="here's my idea"
+          value={this.state.mainIdea}
+          placeholder="Here's something you should do"
         />
         <input
           name="website"
-          type="textarea"
+          type="url"
           onChange={this.handleChange}
           placeholder="website"
+        />
+        <input
+          name="extraInfo"
+          type="text"
+          onChange={this.handleChange}
+          placeholder="anything else I should know?"
         />
         <button
           className="idea-submit"
@@ -63,7 +65,7 @@ class NewIdea extends Component {
           >
           Submit
         </button>
-        <div>{this.props.screenName}</div>
+        <div>Submitted by: {this.props.screenName}</div>
       </div>
     );
   };
