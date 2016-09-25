@@ -59,3 +59,9 @@ For this project, I'll be using the following technologies:
     * display posts by most popular ideas (by user votes)
 - filter by categories
 - allow users to comment on another user's idea
+
+##Can't get this to work
+I'm trying to grab the friendlier "screenName" from the user's profile.
+I can console.log it but can't figure out how to use it in the html
+
+need to add edit (and delete) for original author, comment for other users

@@ -8,9 +8,9 @@ class App extends Component {
     this.state = {
       userEmail: '',
       loggedIn: false,
+      screenName: '',
     };
     this.signOut = this.signOut.bind(this);
-    // this.getScreenName = this.getScreenName.bind(this);
   }
   componentWillMount() {
     setTimeout(() => {
@@ -18,22 +18,13 @@ class App extends Component {
         this.setState({
           loggedIn: (user !== null),
         })
-        console.log(`Currently logged in ----- ${user.email} -----`)
         this.setState({
           userEmail: user.email,
         })
+        console.log(`Currently logged in ----- ${user.email} -----`)
       });
     }, 200)
-    // this.getScreenName();
   }
-  //can't get this to work
-  // getScreenName() {
-  //   const loggedInUser = firebase.auth().currentUser;
-  //   firebase.database().ref('users').orderByChild('email').equalTo(`${loggedInUser.email}`).on('child_added', function(snapshot) {
-  //     const sN = snapshot.val();
-  //     console.log(`The ScreenName is: ${sN.screenName}`);
-  //   });
-  // }
   signOut() {
     firebase.auth()
       .signOut()
@@ -58,7 +49,6 @@ class App extends Component {
       );
     };
   }
-
   render() {
     return (
       <div >
@@ -68,12 +58,6 @@ class App extends Component {
             {
               this.loggedInLinks()
             }
-          </div>
-          <div id="nav-links-group">
-            <Link className="nav-links" to="/">Home |</Link>
-            <Link className="nav-links" to="login"> Login |</Link>
-            <Link className="nav-links" to="dashboard"> Dashboard |</Link>
-            <Link className="nav-links" onClick={this.signOut}> Logout</Link>
           </div>
         </header>
         <div id="content">

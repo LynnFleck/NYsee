@@ -1,24 +1,50 @@
 import React, { Component } from 'react';
+import request from 'superagent';
 import firebase from '../../firebase.config.js';
 import NewIdea from './NewIdea.jsx';
 import IdeaList from './IdeaList.jsx';
 
 class Dashboard extends Component {
+   constructor(props) {
+    super(props);
+    this.state = {
+      posts: [],
+    };
+    this.httpGetPosts = this.httpGetPosts.bind(this);
+  }
+  componentDidMount() {
+    this.httpGetPosts();
+  }
+  httpGetPosts() {
+    const url = 'https://nysee-d8e7f.firebaseio.com/ideas.json';
+    request.get(url)
+           .then((response) => {
+             const postsData = response.body;
+             let posts = [];
+             if (postsData) {
+               posts = Object.keys(postsData).map((id) => {
+                 const individualPostData = postsData[id];
+                 return {
+                   id,
+                   email: individualPostData.email,
+                   mainIdea: individualPostData.mainIdea,
+                   uid: individualPostData.uid,
+                   website: individualPostData.website,
+                   dateSubmitted: individualPostData.dateSubmitted,
+                 };
+               });
+             }
+             this.setState({ posts });
+           });
+  }
   render() {
     return (
       <div>
-        <h1>This is the DASHBOARD page. This page IS protected</h1>
-        <NewIdea
-          id="123"
-          mainIdea="nothing here"
-          website="http://www.lynnfleck.com"
-          screenName="trying to get screenName from the database"
-        />
+        <h1>DASHBOARD</h1>
+        <NewIdea  />
         <IdeaList
-          id="123"
-          mainIdea="nothing here"
-          website="http://www.lynnfleck.com"
-          screenName="Lynn F"
+          posts={this.state.posts}
+          newDate={new Date().toJSON().slice(0,10)}
         />
       </div>
       );

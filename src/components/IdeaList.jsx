@@ -1,21 +1,28 @@
 import React, { Component } from 'react';
+import request from 'superagent';
+import Idea from './Idea.jsx';
 
 class IdeaList extends Component {
-
   render() {
-    return (
-      <div id="idea-list" className="clearfix">
-        <h1>This is the IdeaList page. This page IS protected</h1>
-        <div id="one-idea">
-          <h1>This is JUST ONE IDEA</h1>
-          <div id={this.props.id}></div>
-          <div>{this.props.mainIdea}</div>
-          <div>{this.props.website}</div>
-          <div>{this.props.screenName}</div>
+    const postElements = this.props.posts.map((post, idx) => {
+      return (
+        <div key={idx}>
+          <Idea
+          mainIdea={post.mainIdea}
+          extraInfo={post.extraInfo}
+          website={post.website}
+          dateSubmitted={post.dateSubmitted}
+          />
         </div>
-      </div>
       );
-  };
+    });
+    return (
+      <div id="idea-list">
+        {postElements}
+      </div>
+    );
+  }
 }
-
 export default IdeaList;
+
+

@@ -61,7 +61,7 @@ class LoginForm extends Component {
         </button>
       </div>
     );
-  }
+  };
 }
 
 export default withRouter(LoginForm);

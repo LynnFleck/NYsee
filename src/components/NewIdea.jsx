@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import firebase from '../../firebase.config.js';
-
-
 
 class NewIdea extends Component {
   constructor() {
@@ -10,65 +9,69 @@ class NewIdea extends Component {
       mainIdea: '',
       website: '',
       extraInfo: '',
-    };
+    }
     this.handleChange = this.handleChange.bind(this);
-    this.submitNewIdea = this.submitNewIdea.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-
   handleChange(e) {
     const stateObj = {};
     const stateKey = e.target.name;
     stateObj[stateKey] = e.target.value;
     this.setState(stateObj);
   }
-  submitNewIdea( mainIdea, website, extraInfo ) {
-    const loggedInUser = firebase.auth().currentUser;
+  handleSubmit(e) {
+    e.preventDefault();
+    const user = firebase.auth().currentUser;
     const newPostKey = firebase.database().ref().child('ideas').push().key;
-    firebase.database().ref(`ideas/${newPostKey}`).set({
-      mainIdea: this.state.mainIdea,
-      website: this.state.website,
-      extraInfo: this.state.extraInfo,
-      uid: loggedInUser.uid,
-      email: loggedInUser.email,
-    })
-    .then(() => {
-        console.log('form has been submitted')
-    })
+    if (user) {
+      firebase.database().ref('ideas')
+        .child(newPostKey)
+        .set({
+          user: user.uid,
+          mainIdea: this.state.mainIdea || "",
+          website: this.state.website || "",
+          extraInfo: this.state.extraInfo || "",
+          email: user.email,
+          dateSubmitted: new Date().toJSON().slice(0,10)
+        });
+      console.log('form has been submitted');
+    } else {
+      alert('Looks like you aren\'t Logged In');
+      this.props.router.push('/');
+    };
   }
   render() {
     return (
       <div id="new-idea-box" className="clearfix">
         <h1>This is the NEW IDEA form</h1>
         <div className={this.props.id}></div>
-        <input
-          name="mainIdea"
-          type="textarea"
-          onChange={this.handleChange}
-          value={this.state.mainIdea}
-          placeholder="Here's something you should do"
-        />
-        <input
-          name="website"
-          type="url"
-          onChange={this.handleChange}
-          placeholder="website"
-        />
-        <input
-          name="extraInfo"
-          type="text"
-          onChange={this.handleChange}
-          placeholder="anything else I should know?"
-        />
-        <button
-          className="idea-submit"
-          onClick={this.submitNewIdea}
-          >
-          Submit
-        </button>
-        <div>Submitted by: {this.props.screenName}</div>
+          <input
+            name="mainIdea"
+            type="textarea"
+            onChange={this.handleChange}
+            placeholder="Here's something you should do"
+          />
+          <input
+            name="website"
+            type="url"
+            onChange={this.handleChange}
+            placeholder="website"
+          />
+          <input
+            name="extraInfo"
+            type="text"
+            onChange={this.handleChange}
+            placeholder="anything else I should know?"
+          />
+          <button
+            className="idea-submit"
+            onClick={this.handleSubmit}
+            >
+            Submit
+          </button>
       </div>
     );
   };
 }
 
-export default NewIdea;
+export default withRouter(NewIdea);
