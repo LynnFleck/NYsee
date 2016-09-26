@@ -1,4 +1,4 @@
-# NYsee
+# NYC<see>
 Making a fun play on the C / see in "NYC", this is an list-making app for Lynn's friends to suggest things for her to do and see while she is in NYC.
 
 Users will be able to suggest things to do, add specifics (ie websites or helpful info "only on Saturdays thru November"), pricing info, amount of time needed, location, type of activity, etc) 
