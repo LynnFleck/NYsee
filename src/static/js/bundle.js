@@ -28169,7 +28169,10 @@
 	    var _this = _possibleConstructorReturn(this, (Dashboard.__proto__ || Object.getPrototypeOf(Dashboard)).call(this, props));
 	
 	    _this.state = {
-	      posts: []
+	      posts: [],
+	      mainIdea: '',
+	      website: '',
+	      extraInfo: ''
 	    };
 	    _this.httpGetPosts = _this.httpGetPosts.bind(_this);
 	    return _this;
@@ -28212,7 +28215,9 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(_NewIdea2.default, null),
+	        _react2.default.createElement(_NewIdea2.default, {
+	          httpGetPosts: this.httpGetPosts
+	        }),
 	        _react2.default.createElement(_IdeaList2.default, {
 	          posts: this.state.posts
 	        })
@@ -29870,6 +29875,10 @@
 	  }, {
 	    key: 'handleSubmit',
 	    value: function handleSubmit(e) {
+	      var _this2 = this;
+	
+	      console.log('weeee');
+	      e.preventDefault();
 	      var user = _firebaseConfig2.default.auth().currentUser;
 	      var newPostKey = _firebaseConfig2.default.database().ref().child('ideas').push().key;
 	      if (user) {
@@ -29880,10 +29889,17 @@
 	          extraInfo: this.state.extraInfo || "",
 	          email: user.email,
 	          dateSubmitted: new Date().toJSON().slice(0, 10)
+	        }).then(function () {
+	          _this2.setState({
+	            mainIdea: '',
+	            website: '',
+	            extraInfo: ''
+	          });
+	          alert('Thank you for submitting an idea!');
+	          console.log('form has been submitted');
+	          console.log('success');
+	          _this2.props.httpGetPosts();
 	        });
-	        alert('Thank you for submitting an idea!');
-	        console.log('form has been submitted');
-	        this.props.router.push('/dashboard');
 	      } else {
 	        alert('Looks like you aren\'t Logged In');
 	        this.props.router.push('/');
@@ -29905,19 +29921,22 @@
 	          name: 'mainIdea',
 	          type: 'textarea',
 	          onChange: this.handleChange,
-	          placeholder: 'Here\'s something you should do'
+	          placeholder: 'Here\'s something you should do',
+	          value: this.state.mainIdea
 	        }),
 	        _react2.default.createElement('input', {
 	          name: 'website',
 	          type: 'url',
 	          onChange: this.handleChange,
-	          placeholder: 'website (optional)'
+	          placeholder: 'website (optional)',
+	          value: this.state.website
 	        }),
 	        _react2.default.createElement('input', {
 	          name: 'extraInfo',
 	          type: 'text',
 	          onChange: this.handleChange,
-	          placeholder: 'anything else? ie. ask for Joe... (Optional)'
+	          placeholder: 'anything else? ie. ask for Joe... (Optional)',
+	          value: this.state.extraInfo
 	        }),
 	        _react2.default.createElement(
 	          'button',
