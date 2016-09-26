@@ -1,12 +1,13 @@
-# NYC<see>
+# NYCsee
+
+
 Making a fun play on the C / see in "NYC", this is an list-making app for Lynn's friends to suggest things for her to do and see while she is in NYC.
 
-Users will be able to suggest things to do, add specifics (ie websites or helpful info "only on Saturdays thru November"), pricing info, amount of time needed, location, type of activity, etc) 
+Users can suggest things to do, add specifics (ie websites or helpful info "only on Saturdays thru November")
 
 ##Project MVP
 - CRUD app 
 - allows users to suggest activities
-- allows users to comment on activities
 
 ###User Story
 1. User will create an account on first visit:
@@ -49,6 +50,7 @@ For this project, I'll be using the following technologies:
 - determine what React components will be needed, which have state
 
 ##Bonuses (random ideas, in no particular order)
+- allows users to comment on activities
 - add a randomizer for selecting the thing to do 
 - users can attach a photo to their suggestion
 - what if user forgets password? reset available? (may be included in firebase already?)
