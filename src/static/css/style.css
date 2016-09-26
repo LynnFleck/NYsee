@@ -10,6 +10,7 @@ GRAY: #999;
 */
 
 /* SITEWIDE ELEMENTS -------------------------------- */
+
 body {
   background-image: url(./../images/nycSkyline.jpg);
   background-size: cover;
@@ -133,7 +134,7 @@ header h1 {
 input {
   padding: 10px;
   width: 80%;
-  margin: 20px 5%;
+  margin: 5px 5%;
   text-align: center;
 }
 
@@ -187,11 +188,11 @@ input {
   position: relative;
   background-color: rgba(0,204,153,.8);
   border-radius: 50%;
-  height: 45vw;
-  width: 45vw;
+  height: 30vw;
+  width: 30vw;
   top: -50px;
-  left: -30px;
-  padding: 90px 50px;
+  left: 10px;
+  padding: 55px 40px;
   box-sizing: border-box;
   text-align: center;
   float: left;
@@ -208,27 +209,36 @@ input {
 #idea-list {
   box-sizing: border-box;
   background-color: rgba(221,221,221,.75);
-  width: 50vw;
+  width: 65vw;
   float: right;
   padding: 20px;
   margin-top: 20px;
   margin-right: 20px;
 }
-.one-idea h2 {
-  font-family: 'Dancing Script', cursive;
-  margin: 10px 0;
-  border-top: 4px solid #00cc99;
-  padding: 10px;
+.one-idea {
   background-color: rgba(255,255,255,.5);
 }
+.one-idea h2 {
+  font-family: arial;
+  border-top: 4px solid #00cc99;
+  padding: 10px 5px 0px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 20px;
+  padding-left: 10px;
+}
 .one-idea p {
-  font-family: 'Dancing Script', cursive;
-  padding-bottom: 10px;
+  font-family: Courier, monospace;
+  padding: 5px;
+  margin: 0 0 10px;
+  font-size: 11px;
+  padding-left: 10px;
 }
 .one-idea p em {
-    font-family: Courier, monospace;
-    font-style: normal;
-    font-size: 14px;
+  font-family: 'Dancing Script', cursive;
+  font-style: normal;
+  font-size: 14px;
+  padding-left: 10px;
 }
 
 /* MEDIA QUERIES -------------------------------- */

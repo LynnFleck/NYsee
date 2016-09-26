@@ -29896,8 +29896,6 @@
 	            extraInfo: ''
 	          });
 	          alert('Thank you for submitting an idea!');
-	          console.log('form has been submitted');
-	          console.log('success');
 	          _this2.props.httpGetPosts();
 	        });
 	      } else {
@@ -29935,7 +29933,7 @@
 	          name: 'extraInfo',
 	          type: 'text',
 	          onChange: this.handleChange,
-	          placeholder: 'anything else? ie. ask for Joe... (Optional)',
+	          placeholder: 'anything else? (Optional)',
 	          value: this.state.extraInfo
 	        }),
 	        _react2.default.createElement(
@@ -30077,31 +30075,15 @@
 	        _react2.default.createElement(
 	          "p",
 	          null,
+	          this.props.website,
+	          this.props.extraInfo,
 	          _react2.default.createElement(
 	            "em",
 	            null,
-	            this.props.website
-	          ),
-	          " | extra info: ",
-	          _react2.default.createElement(
-	            "em",
-	            null,
-	            this.props.extraInfo
+	            "submitted by"
 	          ),
 	          " ",
-	          _react2.default.createElement("br", null),
-	          "submitted by ",
-	          _react2.default.createElement(
-	            "em",
-	            null,
-	            this.props.email
-	          ),
-	          " | on ",
-	          _react2.default.createElement(
-	            "em",
-	            null,
-	            this.props.dateSubmitted
-	          )
+	          this.props.email
 	        )
 	      );
 	    }

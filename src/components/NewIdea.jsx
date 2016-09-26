@@ -42,8 +42,6 @@ class NewIdea extends Component {
               extraInfo: '',
             })
           alert('Thank you for submitting an idea!');
-          console.log('form has been submitted');
-          console.log('success')
           this.props.httpGetPosts();
         })
     } else {
@@ -74,7 +72,7 @@ class NewIdea extends Component {
             name="extraInfo"
             type="text"
             onChange={this.handleChange}
-            placeholder="anything else? ie. ask for Joe... (Optional)"
+            placeholder="anything else? (Optional)"
             value={this.state.extraInfo}
           />
           <button
