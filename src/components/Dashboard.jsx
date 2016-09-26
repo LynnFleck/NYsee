@@ -44,7 +44,6 @@ class Dashboard extends Component {
         <NewIdea  />
         <IdeaList
           posts={this.state.posts}
-          newDate={new Date().toJSON().slice(0,10)}
         />
       </div>
       );

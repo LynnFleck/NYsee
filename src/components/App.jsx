@@ -36,8 +36,8 @@ class App extends Component {
     if (this.state.loggedIn !== true) {
       return (
         <div>
-          <Link className="login-links" to="login">Login</Link>
-          <Link className="login-links" to="register">Register</Link>
+          <Link className="login-link" to="login">Login</Link>
+          <Link className="register-link" to="register">Register</Link>
         </div>
         );
     } else {

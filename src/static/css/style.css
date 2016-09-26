@@ -1,9 +1,37 @@
 body {
-/*   background:  lightslategray; */
-  box-sizing: border-box;
+  background-image: url(./../images/nycSkyline.jpg);
+  background-size: cover;
+  background-position-y: 125px;
+  background-repeat: no-repeat;
 }
-#container {
-  /* border:  10px solid blue; */
+#home-header {
+  position: absolute;
+  background-color: rgba(0,204,153,.8);
+  border-radius: 50%;
+  height: 500px;
+  width: 500px;
+  top: -10px;
+  left: -30px;
+  padding: 80px 50px;
+  box-sizing: border-box;
+  text-align: center;
+}
+#home-header h1 {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+#home-header h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 50px;
+  line-height: 1.3em;
+  margin:  5px;
+}
+#home-header h4{
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
+  line-height: 1.3em;
+  margin:  5px;
 }
 .clearfix:after {
  visibility: hidden;
@@ -14,28 +42,59 @@ body {
  height: 0;
 }
 header {
-  background-color:  lightslategray;
+  background-color:  #999;
   padding: 10px 10px 15px 20px;
+  height: 125px;
 }
 header h1 {
-  margin: 0;
+  margin: 0 auto;
   text-indent: -9999px;
-  background-image: url(./../images/NYSee-logo.svg);
+  background-image: url(./../images/NYSee-logo.png);
   background-repeat: no-repeat;
   background-size: contain;
-  height: 75px;
-  width: 80%;
-  float: left;
+  height: 100%;
+  box-sizing: border-box;
+  background-position: 50% 50%;
+}
+h1 {
+  font-family: 'Archivo Black', sans-serif;
+}
+h2 {
+  font-family: 'Dancing Script', cursive;
 }
 #login-links-group {
-  float: right;
-  width: 20%;
+  position: absolute;
+  right: 20px;
+  top: 30px;
 }
-.login-links {
-  float: right;
+.login-link {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 18px;
   display: block;
-  width: 100%;
   text-align: center;
+  color: #cc0033;
+  border-radius: 6px;
+  background-color: #ddd;
+  text-decoration: none;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+.login-link:hover {
+  background-color: #fff;
+}
+.register-link {
+  font-family: 'Dancing Script', cursive;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 10px;
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+.register-link:hover {
+  color: #666;
+  text-decoration: underline;
 }
 #new-idea-box {
   box-sizing: border-box;
@@ -50,5 +109,4 @@ header h1 {
   float:  right;
   padding: 20px;
   background-color:  yellowgreen;
-
 }

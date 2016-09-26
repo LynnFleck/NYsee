@@ -8,6 +8,7 @@ class IdeaList extends Component {
       return (
         <div key={idx}>
           <Idea
+          email={post.email}
           mainIdea={post.mainIdea}
           extraInfo={post.extraInfo}
           website={post.website}

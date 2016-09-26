@@ -65,3 +65,8 @@ I'm trying to grab the friendlier "screenName" from the user's profile.
 I can console.log it but can't figure out how to use it in the html
 
 need to add edit (and delete) for original author, comment for other users
+change favicon
+screen name instead of email address
+error messages? show on screen not just in console
+add likes?
+bounce in the C and see?
