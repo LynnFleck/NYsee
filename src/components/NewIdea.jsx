@@ -20,7 +20,6 @@ class NewIdea extends Component {
     this.setState(stateObj);
   }
   handleSubmit(e) {
-    e.preventDefault();
     const user = firebase.auth().currentUser;
     const newPostKey = firebase.database().ref().child('ideas').push().key;
     if (user) {
@@ -34,6 +33,7 @@ class NewIdea extends Component {
           email: user.email,
           dateSubmitted: new Date().toJSON().slice(0,10)
         });
+      alert('Thank you for submitting an idea!');
       console.log('form has been submitted');
     } else {
       alert('Looks like you aren\'t Logged In');
