@@ -47,12 +47,14 @@ class LoginForm extends Component {
           onChange={this.handleChange}
           type="text"
           placeholder="email address"
+          value={this.state.email}
         />
         <input
           name="password"
           onChange={this.handleChange}
           type="password"
           placeholder="password"
+          value={this.state.password}
         />
         <button
           className="btn"

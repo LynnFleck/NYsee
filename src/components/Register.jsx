@@ -49,18 +49,21 @@ class Register extends Component {
             onChange={this.handleChange}
             type="text"
             placeholder="email address"
+            value={this.state.email}
           />
           <input
             name="password"
             onChange={this.handleChange}
             type="password"
             placeholder="password - min 6 characters"
+            value={this.state.password}
           />
           <input
             name="screenName"
             onChange={this.handleChange}
             type="text"
             placeholder="screen name"
+            value={this.state.screenName}
           />
           <button
             className="btn"

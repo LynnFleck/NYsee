@@ -27970,13 +27970,15 @@
 	          name: 'email',
 	          onChange: this.handleChange,
 	          type: 'text',
-	          placeholder: 'email address'
+	          placeholder: 'email address',
+	          value: this.state.email
 	        }),
 	        _react2.default.createElement('input', {
 	          name: 'password',
 	          onChange: this.handleChange,
 	          type: 'password',
-	          placeholder: 'password'
+	          placeholder: 'password',
+	          value: this.state.password
 	        }),
 	        _react2.default.createElement(
 	          'button',
@@ -28089,19 +28091,22 @@
 	            name: 'email',
 	            onChange: this.handleChange,
 	            type: 'text',
-	            placeholder: 'email address'
+	            placeholder: 'email address',
+	            value: this.state.email
 	          }),
 	          _react2.default.createElement('input', {
 	            name: 'password',
 	            onChange: this.handleChange,
 	            type: 'password',
-	            placeholder: 'password - min 6 characters'
+	            placeholder: 'password - min 6 characters',
+	            value: this.state.password
 	          }),
 	          _react2.default.createElement('input', {
 	            name: 'screenName',
 	            onChange: this.handleChange,
 	            type: 'text',
-	            placeholder: 'screen name'
+	            placeholder: 'screen name',
+	            value: this.state.screenName
 	          }),
 	          _react2.default.createElement(
 	            'button',
