@@ -20,6 +20,8 @@ class NewIdea extends Component {
     this.setState(stateObj);
   }
   handleSubmit(e) {
+    console.log('weeee')
+    e.preventDefault();
     const user = firebase.auth().currentUser;
     const newPostKey = firebase.database().ref().child('ideas').push().key;
     if (user) {
@@ -31,11 +33,19 @@ class NewIdea extends Component {
           website: this.state.website || "",
           extraInfo: this.state.extraInfo || "",
           email: user.email,
-          dateSubmitted: new Date().toJSON().slice(0,10)
-        });
-      alert('Thank you for submitting an idea!');
-      console.log('form has been submitted');
-      this.props.router.push('/dashboard');
+          dateSubmitted: new Date().toJSON().slice(0,10),
+        })
+        .then(() => {
+           this.setState({
+              mainIdea: '',
+              website: '',
+              extraInfo: '',
+            })
+          alert('Thank you for submitting an idea!');
+          console.log('form has been submitted');
+          console.log('success')
+          this.props.httpGetPosts();
+        })
     } else {
       alert('Looks like you aren\'t Logged In');
       this.props.router.push('/');
@@ -51,18 +61,21 @@ class NewIdea extends Component {
             type="textarea"
             onChange={this.handleChange}
             placeholder="Here's something you should do"
+            value={this.state.mainIdea}
           />
           <input
             name="website"
             type="url"
             onChange={this.handleChange}
             placeholder="website (optional)"
+            value={this.state.website}
           />
           <input
             name="extraInfo"
             type="text"
             onChange={this.handleChange}
             placeholder="anything else? ie. ask for Joe... (Optional)"
+            value={this.state.extraInfo}
           />
           <button
             className="idea-submit btn"

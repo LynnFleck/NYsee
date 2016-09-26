@@ -9,6 +9,9 @@ class Dashboard extends Component {
     super(props);
     this.state = {
       posts: [],
+      mainIdea: '',
+      website: '',
+      extraInfo: '',
     };
     this.httpGetPosts = this.httpGetPosts.bind(this);
   }
@@ -38,10 +41,13 @@ class Dashboard extends Component {
              this.setState({ posts });
            });
   }
+
   render() {
     return (
       <div>
-        <NewIdea  />
+        <NewIdea
+          httpGetPosts={this.httpGetPosts}
+        />
         <IdeaList
           posts={this.state.posts}
         />

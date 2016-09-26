@@ -218,7 +218,8 @@ input {
   font-family: 'Dancing Script', cursive;
   margin: 10px 0;
   border-top: 4px solid #00cc99;
-  padding: 10px 10px 0;
+  padding: 10px;
+  background-color: rgba(255,255,255,.5);
 }
 .one-idea p {
   font-family: 'Dancing Script', cursive;
