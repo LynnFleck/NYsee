@@ -29870,7 +29870,6 @@
 	  }, {
 	    key: 'handleSubmit',
 	    value: function handleSubmit(e) {
-	      e.preventDefault();
 	      var user = _firebaseConfig2.default.auth().currentUser;
 	      var newPostKey = _firebaseConfig2.default.database().ref().child('ideas').push().key;
 	      if (user) {
@@ -29882,6 +29881,7 @@
 	          email: user.email,
 	          dateSubmitted: new Date().toJSON().slice(0, 10)
 	        });
+	        alert('Thank you for submitting an idea!');
 	        console.log('form has been submitted');
 	      } else {
 	        alert('Looks like you aren\'t Logged In');
