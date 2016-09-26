@@ -43,8 +43,8 @@ class App extends Component {
     } else {
       return (
       <div>
-        <Link className="login-links" onClick={this.signOut}>Logout</Link>
-        <h4>Welcome {this.state.userEmail}</h4>
+        <Link className="login-link logout" onClick={this.signOut}>Logout</Link>
+        <h4>Welcome <span>{this.state.userEmail}</span></h4>
       </div>
       );
     };
@@ -53,13 +53,14 @@ class App extends Component {
     return (
       <div >
         <header className="clearfix">
-          <h1>Lynn's NYC and do</h1>
-          <div id="login-links-group">
-            {
-              this.loggedInLinks()
-            }
-          </div>
+          <div id="logo"></div>
+          <h1>Lynn’s List of things to and see while in the Big Apple</h1>
         </header>
+        <div id="login-links-group">
+          {
+            this.loggedInLinks()
+          }
+        </div>
         <div id="content">
           {this.props.children}
         </div>

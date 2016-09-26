@@ -40,8 +40,8 @@ class LoginForm extends Component {
   }
   render() {
     return (
-      <div id="login-box">
-        <h1> this is the LOGIN page </h1>
+      <div id="login-box" className="login-register-box">
+        <h1>LOGIN</h1>
         <input
           name="email"
           onChange={this.handleChange}

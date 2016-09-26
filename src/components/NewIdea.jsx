@@ -43,7 +43,7 @@ class NewIdea extends Component {
   render() {
     return (
       <div id="new-idea-box" className="clearfix">
-        <h1>This is the NEW IDEA form</h1>
+        <h1>Contribute an Idea</h1>
         <div className={this.props.id}></div>
           <input
             name="mainIdea"
@@ -55,16 +55,16 @@ class NewIdea extends Component {
             name="website"
             type="url"
             onChange={this.handleChange}
-            placeholder="website"
+            placeholder="website (optional)"
           />
           <input
             name="extraInfo"
             type="text"
             onChange={this.handleChange}
-            placeholder="anything else I should know?"
+            placeholder="anything else? ie. ask for Joe... (Optional)"
           />
           <button
-            className="idea-submit"
+            className="idea-submit btn"
             onClick={this.handleSubmit}
             >
             Submit

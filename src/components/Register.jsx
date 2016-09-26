@@ -41,8 +41,8 @@ class Register extends Component {
   }
   render() {
     return (
-      <div>
-        <h1>This is the REGISTER PAGE - this is NOT protected</h1>
+      <div id="register-box" className="login-register-box" >
+        <h1>REGISTER</h1>
         <div id="login-box">
           <input
             name="email"
@@ -54,7 +54,7 @@ class Register extends Component {
             name="password"
             onChange={this.handleChange}
             type="password"
-            placeholder="password"
+            placeholder="password - min 6 characters"
           />
           <input
             name="screenName"
@@ -65,7 +65,7 @@ class Register extends Component {
           <button
             className="btn"
             onClick={this.handleSubmit}>
-            Register
+            Submit
           </button>
         </div>
       </div>

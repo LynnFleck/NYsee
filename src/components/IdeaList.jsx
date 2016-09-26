@@ -19,6 +19,7 @@ class IdeaList extends Component {
     });
     return (
       <div id="idea-list">
+        <h1>Current list</h1>
         {postElements}
       </div>
     );

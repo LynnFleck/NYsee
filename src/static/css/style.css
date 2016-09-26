@@ -1,37 +1,24 @@
+/* FONT FAMILIES  --------------------------------
+font-family: 'Archivo Black', sans-serif;
+font-family: 'Dancing Script', cursive;
+*/
+
+/* COLORS USED IN DOCUMENT  --------------------------------
+AQUA:  rgba(0,204,153,.8)  #00cc99
+RED: #cc0033;
+GRAY: #999;
+*/
+
+/* SITEWIDE ELEMENTS -------------------------------- */
 body {
   background-image: url(./../images/nycSkyline.jpg);
   background-size: cover;
   background-position-y: 125px;
   background-repeat: no-repeat;
+  background-position-x: 50%;
 }
-#home-header {
-  position: absolute;
-  background-color: rgba(0,204,153,.8);
-  border-radius: 50%;
-  height: 500px;
-  width: 500px;
-  top: -10px;
-  left: -30px;
-  padding: 80px 50px;
-  box-sizing: border-box;
-  text-align: center;
-}
-#home-header h1 {
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-}
-#home-header h2 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 50px;
-  line-height: 1.3em;
-  margin:  5px;
-}
-#home-header h4{
-  font-family: 'Dancing Script', cursive;
-  font-size: 30px;
-  line-height: 1.3em;
-  margin:  5px;
+h1 {
+  font-family: 'Archivo Black', sans-serif;
 }
 .clearfix:after {
  visibility: hidden;
@@ -41,26 +28,56 @@ body {
  clear: both;
  height: 0;
 }
-header {
-  background-color:  #999;
-  padding: 10px 10px 15px 20px;
-  height: 125px;
+button.btn {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 18px;
+  display: block;
+  text-align: center;
+  color: #fff;
+  border-radius: 6px;
+  background-color: #cc0033;
+  text-decoration: none;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  border:  none;
+  margin: 10px auto;
 }
-header h1 {
-  margin: 0 auto;
-  text-indent: -9999px;
+/* HEADER ELEMENTS -------------------------------- */
+
+header {
+  box-sizing:  border-box;
+  background-color: #999;
+  padding: 10px;
+}
+header #logo {
   background-image: url(./../images/NYSee-logo.png);
   background-repeat: no-repeat;
   background-size: contain;
-  height: 100%;
-  box-sizing: border-box;
   background-position: 50% 50%;
+  height: 100px;
+  width: 240px;
+  margin: 0 auto;
 }
-h1 {
-  font-family: 'Archivo Black', sans-serif;
-}
-h2 {
+header h1 {
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 28px;
+  margin: 0;
   font-family: 'Dancing Script', cursive;
+  position: relative;
+  z-index: 100;
+}
+#login-links-group h4 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 26px;
+  margin: 10px 0;
+}
+#login-links-group h4 span {
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 400;
 }
 #login-links-group {
   position: absolute;
@@ -83,6 +100,11 @@ h2 {
 .login-link:hover {
   background-color: #fff;
 }
+.login-link.logout {
+    color: #fff;
+    background-color: #00cc99;
+    padding: 15px 20px;
+}
 .register-link {
   font-family: 'Dancing Script', cursive;
   font-size: 24px;
@@ -96,17 +118,190 @@ h2 {
   color: #666;
   text-decoration: underline;
 }
-#new-idea-box {
+
+/* REGISTER FORM AND LOGIN FORM ELEMENTS -------------------------------- */
+
+.login-register-box {
+  margin: 40px auto;
+  background: rgba(0, 204, 153, .5);
+  width: 500px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px 10px 40px;
   box-sizing: border-box;
-  width:  50%;
-  float:  left;
-  padding: 20px;
-  background-color: peachpuff;
+}
+input {
+  padding: 10px;
+  width: 80%;
+  margin: 20px 5%;
+  text-align: center;
+}
+
+/* HOME PAGE ELEMENTS -------------------------------- */
+
+#home-header {
+  position: relative;
+  background-color: rgba(0,204,153,.8);
+  border-radius: 50%;
+  height: 500px;
+  width: 500px;
+  top: -50px;
+  left: -30px;
+  padding: 90px 50px;
+  box-sizing: border-box;
+  text-align: center;
+}
+#home-header h1 {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin: 5px 0 10px;
+}
+#home-header h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 50px;
+  line-height: 1em;
+  margin:  5px;
+}
+#home-header h3 {
+  color: white;
+  line-height: 1.4em;
+  text-transform: uppercase;
+  margin: 10px 0 5px;
+}
+#home-header h4{
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
+  line-height: 1.3em;
+  margin:  5px;
+}
+#home-header p {
+  font-size: 1.15em;
+  margin: 10px;
+  line-height: 1.4em;
+}
+
+/* DASHBOARD PAGE ELEMENTS -------------------------------- */
+
+#new-idea-box {
+  position: relative;
+  background-color: rgba(0,204,153,.8);
+  border-radius: 50%;
+  height: 45vw;
+  width: 45vw;
+  top: -50px;
+  left: -30px;
+  padding: 90px 50px;
+  box-sizing: border-box;
+  text-align: center;
+  float: left;
+}
+#new-idea-box h1,
+#idea-list h1 {
+  font-family: 'Archivo Black', sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin: 5px 0 10px;
+  font-size: 24px;
 }
 #idea-list {
   box-sizing: border-box;
-  width:  50%;
-  float:  right;
+  background-color: rgba(221,221,221,.75);
+  width: 50vw;
+  float: right;
   padding: 20px;
-  background-color:  yellowgreen;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.one-idea h2 {
+  font-family: 'Dancing Script', cursive;
+  margin: 10px 0;
+  border-top: 4px solid #00cc99;
+  padding: 10px 10px 0;
+}
+.one-idea p {
+  font-family: 'Dancing Script', cursive;
+  padding-bottom: 10px;
+}
+.one-idea p em {
+    font-family: Courier, monospace;
+    font-style: normal;
+    font-size: 14px;
+}
+
+/* MEDIA QUERIES -------------------------------- */
+
+@media (max-width: 1024px) {
+
+  header #logo {
+    margin-left: 20px;
+  }
+  header h1 {
+    text-align: left;
+    font-size: 24px;
+    margin-left: 20px;
+  }
+  #new-idea-box {
+    height: 100%;
+    width: 100%;
+    padding: 10px 50px;
+    border-radius: 0;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,204,153,.5);
+    margin-top: 20px;
+  }
+  #new-idea-box input {
+    margin: 5px;
+  }
+  #idea-list {
+    width: 100%;
+    padding: 20px 40px;
+    text-align: center;
+    margin-right:  0;
+  }
+}
+
+@media (max-width: 768px) {
+
+  header h1 {
+    font-size: 16px;
+  }
+  header #logo {
+    margin: 0 auto;
+  }
+  header h1 {
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+  }
+  #login-links-group {
+    top: 20px;
+    position: relative;
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+  }
+  #home-header {
+    height: 100%;
+    width: 100%;
+    padding: 90px 50px;
+    border-radius: 0;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,204,153,.5);
+  }
+  #home-expl-group {
+    background-color: rgba(255,255,255,.5);
+    padding: 20px;
+    margin-top: 20px;
+  }
+  #home-expl-group h3 {
+    color: #000;
+  }
+
+
+
 }

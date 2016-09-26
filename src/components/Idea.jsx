@@ -6,14 +6,13 @@ class Idea extends Component {
   }
   render() {
     return (
-      <div id={this.props.uid}>
-        <blockquote>{this.props.mainIdea}
-          <footer><samp>{this.props.website}</samp> |
-            extra info: <samp>{this.props.extraInfo}</samp> |
-            submitted by <samp>{this.props.email}</samp> |
-            date submitted <samp>{this.props.dateSubmitted}</samp>
-          </footer>
-        </blockquote>
+      <div id={this.props.uid} className="one-idea">
+        <h2>{this.props.mainIdea}</h2>
+          <p><em>{this.props.website}</em> |
+            extra info: <em>{this.props.extraInfo}</em> <br />
+            submitted by <em>{this.props.email}</em> |
+            on <em>{this.props.dateSubmitted}</em>
+          </p>
       </div>
       );
   }

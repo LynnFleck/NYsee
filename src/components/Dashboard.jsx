@@ -30,6 +30,7 @@ class Dashboard extends Component {
                    mainIdea: individualPostData.mainIdea,
                    uid: individualPostData.uid,
                    website: individualPostData.website,
+                   extraInfo: individualPostData.extraInfo,
                    dateSubmitted: individualPostData.dateSubmitted,
                  };
                });
@@ -40,7 +41,6 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <h1>DASHBOARD</h1>
         <NewIdea  />
         <IdeaList
           posts={this.state.posts}
