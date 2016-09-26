@@ -35,6 +35,7 @@ class NewIdea extends Component {
         });
       alert('Thank you for submitting an idea!');
       console.log('form has been submitted');
+      this.props.router.push('/dashboard');
     } else {
       alert('Looks like you aren\'t Logged In');
       this.props.router.push('/');
