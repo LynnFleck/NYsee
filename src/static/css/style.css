@@ -70,6 +70,11 @@ header h1 {
   position: relative;
   z-index: 100;
 }
+#login-links-group {
+  position: absolute;
+  right: 20px;
+  top: 30px;
+}
 #login-links-group h4 {
   font-family: 'Dancing Script', cursive;
   font-size: 26px;
@@ -79,11 +84,6 @@ header h1 {
   font-family: sans-serif;
   font-size: 16px;
   font-weight: 400;
-}
-#login-links-group {
-  position: absolute;
-  right: 20px;
-  top: 30px;
 }
 .login-link {
   font-family: 'Archivo Black', sans-serif;
@@ -288,21 +288,51 @@ input {
     margin: 0;
   }
   #login-links-group {
-    top: 20px;
+    right: 0;
     position: relative;
-    width: 60%;
-    margin: 0 auto;
-    text-align: center;
-    padding: 0;
+    margin: 10px 20px;
+    top: 0;
   }
+.login-link {
+    width: 40%;
+    float: left;
+    box-sizing: border-box;
+    padding: 15px;
+    margin-right: 5%;
+}
+  .register-link {
+    padding: 15px;
+    width: 55%;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 18px;
+    color: #cc0033;
+    border-radius: 6px;
+    background-color: #ddd;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    margin-top: 0;
+    box-sizing: border-box;
+    float: right;
+  }
+  .login-register-box {
+    margin: 40px auto;
+    background: rgba(0, 204, 153, .5);
+    width: 100%;
+    text-align: center;
+    padding: 10px 10px 40px;
+    box-sizing: border-box;
+    position: relative;
+}
   #home-header {
     height: 100%;
     width: 100%;
-    padding: 90px 50px;
+    padding: 40px 20px;
     border-radius: 0;
     top: 0;
     left: 0;
     background-color: rgba(0,204,153,.5);
+    position: relative;
   }
   #home-expl-group {
     background-color: rgba(255,255,255,.5);
@@ -312,7 +342,9 @@ input {
   #home-expl-group h3 {
     color: #000;
   }
-
+  #idea-list {
+    padding: 20px;
+  }
 
 
 }

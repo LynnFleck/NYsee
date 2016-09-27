@@ -54,9 +54,9 @@ class App extends Component {
       <div >
         <header className="clearfix">
           <div id="logo"></div>
-          <h1>Lynn’s List of things to and see while in the Big Apple</h1>
+          <h1>Lynn’s List of things to do and see while in the Big Apple</h1>
         </header>
-        <div id="login-links-group">
+        <div id="login-links-group" className="clearfix">
           {
             this.loggedInLinks()
           }

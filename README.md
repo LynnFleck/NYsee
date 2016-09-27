@@ -10,6 +10,7 @@ Users can suggest things to do, add specifics (ie websites or helpful info "only
 - CRUD app 
 - allows users to suggest activities
 - maintain list of previous suggestions
+- make site responsive
 
 ###User Story
 1. User will create an account on first visit:
