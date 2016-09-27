@@ -27272,12 +27272,12 @@
 	          _react2.default.createElement(
 	            'h1',
 	            null,
-	            'Lynn’s List of things to and see while in the Big Apple'
+	            'Lynn’s List of things to do and see while in the Big Apple'
 	          )
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { id: 'login-links-group' },
+	          { id: 'login-links-group', className: 'clearfix' },
 	          this.loggedInLinks()
 	        ),
 	        _react2.default.createElement(
