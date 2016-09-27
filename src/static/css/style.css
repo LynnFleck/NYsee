@@ -240,6 +240,9 @@ input {
   font-size: 14px;
   padding-left: 10px;
 }
+#content {
+  height:  100vh;
+}
 
 /* MEDIA QUERIES -------------------------------- */
 
