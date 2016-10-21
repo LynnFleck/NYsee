@@ -12,7 +12,6 @@ class IdeaList extends Component {
           mainIdea={post.mainIdea}
           extraInfo={post.extraInfo}
           website={post.website}
-          dateSubmitted={post.dateSubmitted}
           />
         </div>
       );
