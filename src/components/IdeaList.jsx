@@ -12,13 +12,13 @@ class IdeaList extends Component {
           mainIdea={post.mainIdea}
           extraInfo={post.extraInfo}
           website={post.website}
+          handleDelete={this.handleDeleteClick}
           />
         </div>
       );
     });
     return (
-      <div id="idea-list">
-        <h1>Current list</h1>
+      <div>
         {postElements}
       </div>
     );

@@ -20,7 +20,6 @@ class NewIdea extends Component {
     this.setState(stateObj);
   }
   handleSubmit(e) {
-    console.log('weeee')
     e.preventDefault();
     const user = firebase.auth().currentUser;
     const newPostKey = firebase.database().ref().child('ideas').push().key;
@@ -53,12 +52,12 @@ class NewIdea extends Component {
     return (
       <div id="new-idea-box" className="clearfix">
         <h1>Contribute an Idea</h1>
-        <div className={this.props.id}></div>
+        <div>
           <input
             name="mainIdea"
             type="textarea"
             onChange={this.handleChange}
-            placeholder="Here's something you should do"
+            placeholder="Enter an idea"
             value={this.state.mainIdea}
           />
           <input
@@ -72,7 +71,7 @@ class NewIdea extends Component {
             name="extraInfo"
             type="text"
             onChange={this.handleChange}
-            placeholder="anything else? (Optional)"
+            placeholder="anything else? (optional)"
             value={this.state.extraInfo}
           />
           <button
@@ -81,6 +80,7 @@ class NewIdea extends Component {
             >
             Submit
           </button>
+        </div>
       </div>
     );
   };

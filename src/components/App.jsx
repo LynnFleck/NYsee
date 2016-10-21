@@ -8,7 +8,6 @@ class App extends Component {
     this.state = {
       userEmail: '',
       loggedIn: false,
-      screenName: '',
     };
     this.signOut = this.signOut.bind(this);
   }
@@ -54,8 +53,9 @@ class App extends Component {
     return (
       <div >
         <header className="clearfix">
-          <div id="logo"></div>
-          <h1>Lynn’s List of things to do and see while in the Big Apple</h1>
+          <div id="logo">
+            <h1>Lynn’s List of things to do and see while in the Big Apple</h1>
+          </div>
         </header>
         <div id="login-links-group" className="clearfix">
           {

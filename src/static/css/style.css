@@ -11,10 +11,13 @@ GRAY: #999;
 
 /* SITEWIDE ELEMENTS -------------------------------- */
 
+* {
+  box-sizing: border-box;
+}
 body {
   background-image: url(./../images/nycSkyline.jpg);
   background-size: cover;
-  background-position-y: 125px;
+  background-position-y: 105px;
   background-repeat: no-repeat;
   background-position-x: 50%;
 }
@@ -24,7 +27,7 @@ h1 {
 .clearfix:after {
  visibility: hidden;
  display: block;
- font-size: 0;
+ font-size: 0;v
  content: " ";
  clear: both;
  height: 0;
@@ -47,33 +50,31 @@ button.btn {
 /* HEADER ELEMENTS -------------------------------- */
 
 header {
-  box-sizing:  border-box;
   background-color: #999;
   padding: 10px;
+  margin-bottom: 20px;
+  height: 105px;
 }
 header #logo {
   background-image: url(./../images/NYSee-logo.png);
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: 50% 50%;
-  height: 100px;
-  width: 240px;
-  margin: 0 auto;
+  background-position: 0;
+  height: 85px;
+  padding: 0 170px 0 220px;
 }
 header h1 {
-  padding: 10px;
-  text-align: center;
+  line-height: 85px;
   color: #fff;
   font-size: 28px;
   margin: 0;
   font-family: 'Dancing Script', cursive;
-  position: relative;
-  z-index: 100;
+  text-align: left;
 }
 #login-links-group {
   position: absolute;
-  right: 20px;
-  top: 30px;
+  right: 15px;
+  top: 15px;
 }
 #login-links-group h4 {
   font-family: 'Dancing Script', cursive;
@@ -94,7 +95,7 @@ header h1 {
   border-radius: 6px;
   background-color: #ddd;
   text-decoration: none;
-  padding: 15px 30px;
+  padding: 10px 20px;
   text-transform: uppercase;
   letter-spacing: .2em;
 }
@@ -129,7 +130,6 @@ header h1 {
   text-align: center;
   border-radius: 6px;
   padding: 10px 10px 40px;
-  box-sizing: border-box;
 }
 input {
   padding: 10px;
@@ -149,7 +149,6 @@ input {
   top: -50px;
   left: -30px;
   padding: 90px 50px;
-  box-sizing: border-box;
   text-align: center;
 }
 #home-header h1 {
@@ -185,38 +184,36 @@ input {
 /* DASHBOARD PAGE ELEMENTS -------------------------------- */
 
 #new-idea-box {
-  position: relative;
   background-color: rgba(0,204,153,.8);
   border-radius: 50%;
   height: 30vw;
   width: 30vw;
-  top: -50px;
-  left: 10px;
-  padding: 55px 40px;
-  box-sizing: border-box;
+  margin: 1.4vw;
+  padding: 40px;
   text-align: center;
   float: left;
 }
-#new-idea-box h1,
-#idea-list h1 {
+#new-idea-box h1 {
   font-family: 'Archivo Black', sans-serif;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: .1em;
-  margin: 5px 0 10px;
-  font-size: 24px;
-}
-#idea-list {
-  box-sizing: border-box;
-  background-color: rgba(221,221,221,.75);
-  width: 65vw;
-  float: right;
-  padding: 20px;
-  margin-top: 20px;
-  margin-right: 20px;
+  margin: 35px 0 10px;
+  font-size: 18px;
 }
 .one-idea {
-  background-color: rgba(255,255,255,.5);
+  background-color: rgba(255,255,255,.85);
+  position: relative;
+  width: 30vw;
+  float: left;
+  margin: 5px 1.4vw;
+  height: 100px;
+  overflow: auto;
+}
+.one-idea #checkmark {
+    position: absolute;
+    top: 15px;
+    left: 10px;
 }
 .one-idea h2 {
   font-family: arial;
@@ -224,8 +221,8 @@ input {
   padding: 10px 5px 0px;
   margin: 0;
   font-weight: 400;
-  font-size: 20px;
-  padding-left: 10px;
+  font-size: 16px;
+  padding-left: 45px;
 }
 .one-idea p {
   font-family: Courier, monospace;
@@ -299,7 +296,6 @@ input {
 .login-link {
     width: 40%;
     float: left;
-    box-sizing: border-box;
     padding: 15px;
     margin-right: 5%;
 }
@@ -315,7 +311,6 @@ input {
     text-transform: uppercase;
     letter-spacing: .2em;
     margin-top: 0;
-    box-sizing: border-box;
     float: right;
   }
   .login-register-box {
@@ -324,7 +319,6 @@ input {
     width: 100%;
     text-align: center;
     padding: 10px 10px 40px;
-    box-sizing: border-box;
     position: relative;
 }
   #home-header {

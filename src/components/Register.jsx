@@ -8,7 +8,6 @@ class Register extends Component {
     this.state = {
       email: '',
       password: '',
-      screenName: '',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,7 +20,7 @@ class Register extends Component {
   }
 
   handleSubmit() {
-    const { email, password, screenName } = this.state;
+    const { email, password } = this.state;
     firebase.auth()
       .createUserWithEmailAndPassword(email, password)
       .catch((err) => {
@@ -32,8 +31,7 @@ class Register extends Component {
       .then((user) => {
         firebase.database().ref('users')
           .child(user.uid)
-          .set({email: email,
-           screenName: screenName})
+          .set({email: email})
       })
       .then(() => {
         this.props.router.push('/dashboard');
@@ -57,13 +55,6 @@ class Register extends Component {
             type="password"
             placeholder="password - min 6 characters"
             value={this.state.password}
-          />
-          <input
-            name="screenName"
-            onChange={this.handleChange}
-            type="text"
-            placeholder="screen name"
-            value={this.state.screenName}
           />
           <button
             className="btn"
