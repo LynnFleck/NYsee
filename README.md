@@ -27,6 +27,12 @@ Users can suggest things to do, add specifics (ie websites or helpful info "only
     * chronological list of ideas  
 5. User can log out when desired (log out link)
 
+##Wireframe for React
+<img width="1033" alt="wireframing for react" src="https://cloud.githubusercontent.com/assets/11340887/18856597/1d8b33ce-842a-11e6-8e14-d360f2fa2147.png">
+
+##Pre-planning for CSS styling
+<img width="581" alt="layouts for css styling" src="https://cloud.githubusercontent.com/assets/11340887/18856596/1d8afb5c-842a-11e6-9479-6ccbf91a270c.png">
+
 ##Technologies
 For this project, I have used the following technologies:
 - HTML
@@ -36,6 +42,9 @@ For this project, I have used the following technologies:
 - Babel
 - Webpack
 - GitHub
+- Photoshop 
+- Illustrator
+
 
 ##Future Improvements (random ideas, in no particular order)
 - show completed activities
