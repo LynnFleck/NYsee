@@ -8,10 +8,7 @@ class Dashboard extends Component {
    constructor(props) {
     super(props);
     this.state = {
-      posts: [],
-      mainIdea: '',
-      website: '',
-      extraInfo: '',
+      posts: []
     };
     this.httpGetPosts = this.httpGetPosts.bind(this);
   }
@@ -23,6 +20,7 @@ class Dashboard extends Component {
     request.get(url)
            .then((response) => {
              const postsData = response.body;
+             // console.log(Object.keys(postsData).map((id) => { return `id: ${id}`}));
              let posts = [];
              if (postsData) {
                posts = Object.keys(postsData).map((id) => {

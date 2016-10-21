@@ -25,6 +25,7 @@ class App extends Component {
       });
     }, 200)
   }
+
   signOut() {
     firebase.auth()
       .signOut()

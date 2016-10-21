@@ -11,18 +11,18 @@ import IdeaList from '../components/IdeaList.jsx';
 
 const Routes = () => {
     return (
-        <Router history={hashHistory}>
-          <Route path="/" component={App}>
-          <IndexRoute component={Home} />
-            <Route path="login" component={LoginForm} />
-            <Route path="register" component={Register} />
-            <Route path="dashboard" component={Dashboard}>
-              <Route path="newIdea" component={NewIdea} />
-              <Route path="ideaList" component={IdeaList} />
-            </Route>
+      <Router history={hashHistory}>
+        <Route path="/" component={App}>
+        <IndexRoute component={Home} />
+          <Route path="login" component={LoginForm} />
+          <Route path="register" component={Register} />
+          <Route path="dashboard" component={Dashboard}>
+            <Route path="newIdea" component={NewIdea} />
+            <Route path="ideaList" component={IdeaList} />
           </Route>
-        </Router>
-      );
+        </Route>
+      </Router>
+    );
 }
 
 export default Routes;
