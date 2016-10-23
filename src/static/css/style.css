@@ -105,7 +105,6 @@ header h1 {
 .login-link.logout {
     color: #fff;
     background-color: #00cc99;
-    padding: 15px 20px;
 }
 .register-link {
   font-family: 'Dancing Script', cursive;
@@ -203,26 +202,29 @@ input {
 }
 .one-idea {
   background-color: rgba(255,255,255,.85);
-  position: relative;
-  width: 30vw;
+  border-top: 4px solid #00cc99;
   float: left;
   margin: 5px 1.4vw;
-  height: 100px;
-  overflow: auto;
+  position: relative;
+  width: 30vw;
 }
-.one-idea #checkmark {
+.one-idea .checkmark {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  color: #eee;
+}
+.one-idea .details {
     position: absolute;
-    top: 15px;
-    left: 10px;
+    bottom: 10px;
+    right: 10px;
 }
 .one-idea h2 {
   font-family: arial;
-  border-top: 4px solid #00cc99;
-  padding: 10px 5px 0px;
-  margin: 0;
+  padding: 0px 10px 0 50px;
   font-weight: 400;
   font-size: 16px;
-  padding-left: 45px;
+  height: 65px;
 }
 .one-idea p {
   font-family: Courier, monospace;
@@ -237,9 +239,11 @@ input {
   font-size: 14px;
   padding-left: 10px;
 }
-#content {
-  height:  100vh;
+.idea-info {
+    display: none;
+    height: 65px;
 }
+
 
 /* MEDIA QUERIES -------------------------------- */
 

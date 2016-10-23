@@ -32,6 +32,7 @@ class NewIdea extends Component {
           website: this.state.website || "",
           extraInfo: this.state.extraInfo || "",
           email: user.email,
+          complete: false,
           dateSubmitted: new Date().toJSON().slice(0,10),
         })
         .then(() => {

@@ -11,7 +11,7 @@ class Dashboard extends Component {
       posts: []
     };
     this.httpGetPosts = this.httpGetPosts.bind(this);
-    this.httpDeletePost = this.httpDeletePost.bind(this);
+    this.setIdeaToCompleted = this.setIdeaToCompleted.bind(this);
   }
   componentDidMount() {
     this.httpGetPosts();
@@ -34,21 +34,19 @@ class Dashboard extends Component {
                    website: individualPostData.website,
                    extraInfo: individualPostData.extraInfo,
                    dateSubmitted: individualPostData.dateSubmitted,
+                   complete: individualPostData.complete
                  };
                });
              }
              this.setState({ posts });
            });
   }
+  setIdeaToCompleted() {
+    if (this.props.complete == false) {
+      console.log('yikes!')
+    }
 
-  httpDeletePost(id) {
-    const url = `https://nysee-d8e7f.firebaseio.com/ideas/${id}.json`;
-    request.del(url)
-           .then(() => {
-             this.httpGetPosts();
-           });
   }
-
   render() {
     return (
       <div>
@@ -56,7 +54,8 @@ class Dashboard extends Component {
           httpGetPosts={this.httpGetPosts}
         />
         <IdeaList
-          handleDelete={this.httpDeletePost} httpGetPosts={this.httpGetPosts}
+          httpGetPosts={this.httpGetPosts}
+          setComplete={this.setIdeaToCompleted}
           posts={this.state.posts}
         />
       </div>

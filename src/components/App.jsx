@@ -11,6 +11,7 @@ class App extends Component {
     };
     this.signOut = this.signOut.bind(this);
   }
+
   componentWillMount() {
     setTimeout(() => {
       firebase.auth().onAuthStateChanged((user) => {
@@ -32,6 +33,7 @@ class App extends Component {
         console.log('user has been signed out');
       });
   }
+
   loggedInLinks() {
     if (this.state.loggedIn !== true) {
       return (
@@ -49,6 +51,7 @@ class App extends Component {
       );
     };
   }
+
   render() {
     return (
       <div >

@@ -13,6 +13,8 @@ class IdeaList extends Component {
           extraInfo={post.extraInfo}
           website={post.website}
           handleDelete={this.handleDeleteClick}
+          setComplete={this.setIdeaToCompleted}
+          complete={post.complete}
           />
         </div>
       );
