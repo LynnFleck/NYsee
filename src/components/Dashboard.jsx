@@ -11,7 +11,6 @@ class Dashboard extends Component {
       posts: []
     };
     this.httpGetPosts = this.httpGetPosts.bind(this);
-    this.setIdeaToCompleted = this.setIdeaToCompleted.bind(this);
   }
   componentDidMount() {
     this.httpGetPosts();
@@ -41,12 +40,7 @@ class Dashboard extends Component {
              this.setState({ posts });
            });
   }
-  setIdeaToCompleted() {
-    if (this.props.complete == false) {
-      console.log('yikes!')
-    }
 
-  }
   render() {
     return (
       <div>
@@ -55,7 +49,6 @@ class Dashboard extends Component {
         />
         <IdeaList
           httpGetPosts={this.httpGetPosts}
-          setComplete={this.setIdeaToCompleted}
           posts={this.state.posts}
         />
       </div>

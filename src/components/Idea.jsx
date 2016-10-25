@@ -1,22 +1,42 @@
 import React, { Component } from 'react';
+import request from 'superagent';
 
 const propTypes = {
-  complete: React.PropTypes.boolean,
-  setIdeaToCompleted: React.PropTypes.func,
+  setComplete: React.PropTypes.func,
+  httpGetPosts: React.PropTypes.func,
 };
 
 class Idea extends Component {
   constructor(props) {
     super(props);
-    this.toggleIdeaInfoBox = this.toggleIdeaInfoBox.bind(this);
+    this.clickToShowInfo = this.clickToShowInfo.bind(this);
+    this.handleCompleteClick = this.handleCompleteClick.bind(this);
   }
-  toggleIdeaInfoBox() {
-    const detailsBox = document.querySelector('.idea-info');
+
+  clickToShowInfo() {
+    const detailsBox = document.getElementById(this.props.id);
     if (detailsBox.style.display === "block") {
       detailsBox.style.display = "none";
     } else {
       detailsBox.style.display = "block";
+    };
+  }
+
+  handleCompleteClick() {
+    let checkComplete;
+    if (this.props.complete === false) {
+      checkComplete = true;
+    } else {
+      checkComplete = false;
     }
+    request.patch(`https://nysee-d8e7f.firebaseio.com/ideas/${this.props.id}.json`)
+       .send({ complete: checkComplete })
+       .end((err, res) => {
+       });
+    this.httpGetPosts;
+    console.log('updated')
+
+
   }
 
   render() {
@@ -24,10 +44,10 @@ class Idea extends Component {
     return (
       <div id={this.props.uid} className="one-idea clearfix">
         <h2>{this.props.mainIdea}
-          <button className="checkmark" onClick={this.setIdeaToCompleted}>&#10004;</button>
-          <button className="details" onClick={this.toggleIdeaInfoBox}>+</button>
+          <input type="checkbox" className="checkmark" onClick={this.handleCompleteClick} defaultChecked={this.props.complete} />
+          <button className="details" onClick={this.clickToShowInfo}>details</button>
         </h2>
-        <div className="idea-info" >
+        <div id={this.props.id} className="idea-info" >
           <p>
             <em>website</em> {this.props.website}<br />
             <em>other info</em> {this.props.extraInfo}<br />
@@ -38,6 +58,8 @@ class Idea extends Component {
     );
   }
 }
+
+Idea.propTypes = propTypes;
 
 export default Idea;
 

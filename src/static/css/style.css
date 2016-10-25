@@ -63,14 +63,6 @@ header #logo {
   height: 85px;
   padding: 0 170px 0 220px;
 }
-header h1 {
-  line-height: 85px;
-  color: #fff;
-  font-size: 28px;
-  margin: 0;
-  font-family: 'Dancing Script', cursive;
-  text-align: left;
-}
 #login-links-group {
   position: absolute;
   right: 15px;
@@ -146,7 +138,7 @@ input {
   height: 500px;
   width: 500px;
   top: -50px;
-  left: -30px;
+  margin: 0 auto;
   padding: 90px 50px;
   text-align: center;
 }
@@ -210,14 +202,13 @@ input {
 }
 .one-idea .checkmark {
   position: absolute;
-  top: 12px;
-  left: 10px;
-  color: #eee;
+  top: 10px;
+  left: 0;
 }
 .one-idea .details {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 .one-idea h2 {
   font-family: arial;
@@ -249,14 +240,6 @@ input {
 
 @media (max-width: 1024px) {
 
-  header #logo {
-    margin-left: 20px;
-  }
-  header h1 {
-    text-align: left;
-    font-size: 24px;
-    margin-left: 20px;
-  }
   #new-idea-box {
     height: 100%;
     width: 100%;
@@ -265,7 +248,7 @@ input {
     top: 0;
     left: 0;
     background-color: rgba(0,204,153,.5);
-    margin-top: 20px;
+    margin-top: 0px;
   }
   #new-idea-box input {
     margin: 5px;
@@ -280,51 +263,12 @@ input {
 
 @media (max-width: 768px) {
 
-  header h1 {
-    font-size: 16px;
+  .one-idea {
+    width: 46.2vw;
   }
-  header #logo {
-    margin: 0 auto;
+  #new-idea-box {
+    margin: 0 0 10px 0;
   }
-  header h1 {
-    font-size: 24px;
-    text-align: center;
-    margin: 0;
-  }
-  #login-links-group {
-    right: 0;
-    position: relative;
-    margin: 10px 20px;
-    top: 0;
-  }
-.login-link {
-    width: 40%;
-    float: left;
-    padding: 15px;
-    margin-right: 5%;
-}
-  .register-link {
-    padding: 15px;
-    width: 55%;
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 18px;
-    color: #cc0033;
-    border-radius: 6px;
-    background-color: #ddd;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: .2em;
-    margin-top: 0;
-    float: right;
-  }
-  .login-register-box {
-    margin: 40px auto;
-    background: rgba(0, 204, 153, .5);
-    width: 100%;
-    text-align: center;
-    padding: 10px 10px 40px;
-    position: relative;
-}
   #home-header {
     height: 100%;
     width: 100%;
@@ -335,6 +279,7 @@ input {
     background-color: rgba(0,204,153,.5);
     position: relative;
   }
+
   #home-expl-group {
     background-color: rgba(255,255,255,.5);
     padding: 20px;
@@ -346,6 +291,5 @@ input {
   #idea-list {
     padding: 20px;
   }
-
 
 }
